@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet, Image, View, TextInput, Button, Text } from "react-native";
 import Constants from "expo-constants";
 
-const Login = ({ navigation }) => {
+const Login = ({ navigation, setIsLogin, isLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -46,7 +46,7 @@ const Login = ({ navigation }) => {
         <Button
           color="purple"
           onPress={() => {
-            navigation.navigate("Dashboard", { name: email });
+            setIsLogin(false);
           }}
           title="SUBMIT"
         />

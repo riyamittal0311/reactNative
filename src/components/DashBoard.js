@@ -66,11 +66,12 @@ export const DashBoardHeader = ({ route, options, navigation }) => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingTop: Constants.statusBarHeight,
+        marginTop: Constants.statusBarHeight,
+        backgroundColor:'lightblue'
       }}
     >
       <Text style={styles.title}>Hi {title}</Text>
-      <Pressable onPress={() => navigation.navigate("Profile")}>
+      <Pressable onPress={() => navigation.navigate("HOME",{screen :'Profile'})}>
         <Image
           style={styles.header}
           source={{
