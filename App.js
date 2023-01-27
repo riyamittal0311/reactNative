@@ -23,14 +23,15 @@ export default function App() {
             )}
           />
         ) : (
-          <Stack.Group>
-            <Stack.Screen
-              name="HOME"
-              component={BottomTabs}
-              options={{ header: (props) => <DashBoardHeader {...props} /> }}
-            />
+          <Stack.Group
+            screenOptions={{
+              header: (props) => <DashBoardHeader {...props} />,
+            }}
+          >
+            <Stack.Screen name="HOME" component={BottomTabs} />
           </Stack.Group>
         )}
+
       </Stack.Navigator>
     </NavigationContainer>
   );
